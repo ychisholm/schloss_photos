@@ -1,163 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SCHLOSS — DJ</title>
-  <meta name="description" content="SCHLOSS — NYC-based DJ and founder of Not So Static. Live sets, events, and media." />
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .hide-scrollbar::-webkit-scrollbar { height: 8px; }
-    .hide-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 9999px; }
-    .hide-scrollbar { scrollbar-width: thin; }
-  </style>
-</head>
-<body class="bg-white text-black">
-  <main class="min-h-screen">
-    <div class="mx-auto max-w-5xl px-5 pb-24">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCHLOSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background-image: url('https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_background_media.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.8);
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="text-black">
+    <div class="relative z-10 mx-auto max-w-5xl px-5 pb-24">
       <!-- Header -->
-      <header class="pt-14 pb-10 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-none">SCHLOSS</h1>
-        <div class="mt-5 flex items-center justify-center gap-4">
-          <!-- SoundCloud -->
-          <a href="https://soundcloud.com/maxschlossberg?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 hover:border-black/30 transition">
-            <!-- Simple SoundCloud icon -->
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" aria-hidden="true" focusable="false">
-              <path d="M335.2 184.2c-6.2 0-12.2.7-18 2-12.5-44.7-53.5-77.4-102-77.4-58.5 0-106 47.5-106 106v2.5c-3.9-.9-8-1.4-12.2-1.4C68 216 32 252 32 296s36 80 81 80h222c40.1 0 73-32.9 73-73s-32.9-73-72.8-73h-.1z" fill="currentColor"/>
-            </svg>
-          </a>
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/max.schlossberg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 hover:border-black/30 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5" aria-hidden="true" focusable="false">
-              <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12.1 27-27 27h-27c-14.9 0-27-12.1-27-27v-27c0-14.9 12.1-27 27-27h27c14.9 0 27 12.1 27 27v27zM398.8 80.2C369.5 50.7 327.4 32 280.9 32H167.1C120.6 32 78.5 50.7 49.2 80.2 19.9 109.7 1.2 151.8 1.2 198.3v113.8c0 46.5 18.7 88.6 48 118.1 29.3 29.5 71.4 48.2 118 48.2h113.8c46.5 0 88.6-18.7 118.1-48.2 29.3-29.5 48-71.6 48-118.1z"/>
-            </svg>
-          </a>
+      <header class="pt-10 pb-4 text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extralight tracking-tight leading-none uppercase">SCHLOSS</h1>
+        <div class="mt-3 flex items-center justify-center gap-4">
+          <a href="https://soundcloud.com/maxschlossberg" target="_blank"><img src="https://cdn.simpleicons.org/soundcloud" alt="SoundCloud" class="h-5 w-5" /></a>
+          <a href="https://www.instagram.com/max.schlossberg/" target="_blank"><img src="https://cdn.simpleicons.org/instagram" alt="Instagram" class="h-5 w-5" /></a>
         </div>
       </header>
 
       <!-- Overview -->
-      <section id="overview" class="grid gap-8 md:grid-cols-5 md:items-center md:gap-12">
-        <div class="md:col-span-2 order-1">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_overview.jpg"
-               alt="SCHLOSS profile"
-               class="w-full h-80 md:h-96 rounded-2xl object-cover shadow-sm"
-               decoding="async" loading="eager" draggable="false" />
+      <section class="grid gap-6 md:grid-cols-5 md:items-center md:gap-12 bg-transparent p-6 md:p-10 max-w-4xl mx-auto mt-4">
+        <div class="md:col-span-2 order-1 justify-self-center md:justify-self-start">
+          <div class="aspect-square w-64 md:w-96">
+            <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_overview.jpg" alt="SCHLOSS profile" class="w-full h-full object-cover" />
+          </div>
         </div>
         <div class="md:col-span-3 order-2 text-center md:text-left">
-          <h2 class="text-2xl font-semibold mb-3">Overview</h2>
-          <p class="text-base leading-7 text-black/80">
-            Schloss is a NYC based DJ and founder of Not So Static, an events brand focused on selector-driven lineups and curated concepts.
-            His sets blend technical precision with a selector’s taste for forward sounds that give each experience its own identity.
-            Schloss plays house sets across minimal, afro, nu disco, and garage. Shaped by his time in Europe and years immersed in nightlife
-            and music culture, he brings expertise as both a DJ and an event architect.
-          </p>
+          <h2 class="text-2xl font-extralight uppercase mb-3">Overview</h2>
+          <p class="text-base leading-7 text-black/80 font-light">Schloss is a NYC based DJ and founder of Not So Static, an events brand focused on selector-driven lineups and curated concepts. His sets blend technical precision with a selector’s taste for forward sounds that give each experience its own identity. Schloss plays house sets across minimal, afro, nu disco, and garage. Shaped by his time in Europe and years immersed in nightlife and music culture, he brings expertise as both a DJ and an event architect.</p>
         </div>
       </section>
 
-      <!-- Live Sets (full visual players) -->
-      <section id="live-sets" class="mt-16 text-center">
-        <h2 class="text-2xl font-semibold mb-6">Live Sets</h2>
-
-        <!-- Keinda Sounds Like Keine (visual) -->
-        <article class="rounded-2xl border border-black/10 p-4 md:p-6 bg-white max-w-3xl mx-auto mb-8">
-          <h3 class="mb-3 text-lg font-medium tracking-tight">Keinda Sounds Like Keine</h3>
-          <div class="w-full overflow-hidden rounded-xl h-[300px]">
-            <iframe
-              title="SoundCloud player: Keinda Sounds Like Keine"
-              width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxschlossberg/keinda-sounds-like-keine%3Fsi%3D0cb6f7dfcddd4d6988e3418aea1b8681%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign%3Dsocial_sharing&visual=true&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&color=%23000000">
-            </iframe>
+      <!-- Live Sets -->
+      <section class="mt-8 text-center bg-transparent p-6 md:p-10 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extralight uppercase mb-6">Live Sets</h2>
+        <article class="p-4 md:p-6 bg-white text-center">
+          <h3 class="mb-3 text-lg font-light uppercase tracking-tight">Keinda Sounds Like Keine</h3>
+          <div class="w-full overflow-hidden h-[300px]">
+            <iframe width="100%" height="100%" allow="autoplay" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxschlossberg/keinda-sounds-like-keine&visual=true"></iframe>
           </div>
         </article>
-
-        <!-- Laissez Faire S2S (visual, using track ID from WP code) -->
-        <article class="rounded-2xl border border-black/10 p-4 md:p-6 bg-white max-w-3xl mx-auto">
-          <h3 class="mb-3 text-lg font-medium tracking-tight">Laissez Faire S2S 3.29.25</h3>
-          <div class="w-full overflow-hidden rounded-xl h-[300px]">
-            <iframe
-              title="SoundCloud player: Laissez Faire S2S 3.29.25"
-              width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2066846776&visual=true&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&color=%23000000">
-            </iframe>
+        <article class="p-4 md:p-6 bg-white text-center mt-6">
+          <h3 class="mb-3 text-lg font-light uppercase tracking-tight">Laissez Faire (Edited)</h3>
+          <div class="w-full overflow-hidden h-[300px]">
+            <iframe width="100%" height="100%" allow="autoplay" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxschlossberg/laissez-faire-edited-1-wav&visual=true"></iframe>
           </div>
         </article>
       </section>
 
       <!-- Events -->
-      <section id="events" class="mt-16 text-center">
-        <h2 class="text-2xl font-semibold mb-6">Events</h2>
-        <div class="overflow-hidden rounded-2xl border border-black/10 bg-white max-w-3xl mx-auto">
+      <section class="mt-8 text-center bg-transparent p-6 md:p-10 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extralight uppercase mb-6">Events</h2>
+        <div class="bg-white">
           <ul class="divide-y divide-black/5">
-            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-5">
-              <span class="text-black/60">Jun 15, 2025</span>
-              <span class="font-medium">Low End Theory</span>
-              <span class="text-black/70">Los Angeles, CA</span>
-            </li>
-            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-5">
-              <span class="text-black/60">Jul 4, 2025</span>
-              <span class="font-medium">Midnight Club</span>
-              <span class="text-black/70">Brooklyn, NY</span>
-            </li>
-            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-5">
-              <span class="text-black/60">Aug 10, 2025</span>
-              <span class="font-medium">The Standard Rooftop</span>
-              <span class="text-black/70">Hollywood, CA</span>
-            </li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">02.08.25 | Groove Ballet NYFW | NYC</li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">02.28.25 | Music For A While | NYC</li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">03.29.25 | Make Believe | NYC</li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">03.29.25 | Laissez Faire | NYC</li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">05.17.25 | Laissez Faire | NYC</li>
+            <li class="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">10.09.25 | Outer Heaven | NYC</li>
           </ul>
         </div>
       </section>
 
       <!-- Media -->
-      <section id="media" class="mt-16 text-center">
-        <h2 class="text-2xl font-semibold mb-6">Media</h2>
-        <div class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory hide-scrollbar justify-center md:justify-start">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_1.jpeg" alt="DJ set photo 1"
-               class="h-72 md:h-80 w-auto rounded-2xl object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_2.jpeg" alt="DJ set photo 2"
-               class="h-72 md:h-80 w-auto rounded-2xl object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_3.jpeg" alt="DJ set photo 3"
-               class="h-72 md:h-80 w-auto rounded-2xl object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
+      <section class="mt-8 bg-transparent p-6 md:p-10 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extralight uppercase mb-6 text-center">Media</h2>
+        <div class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory mx-auto">
+          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_1.jpeg" alt="Media 1" class="h-72 md:h-80 w-auto object-cover snap-start select-none" />
+          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_2.jpeg" alt="Media 2" class="h-72 md:h-80 w-auto object-cover snap-start select-none" />
+          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_3.jpeg" alt="Media 3" class="h-72 md:h-80 w-auto object-cover snap-start select-none" />
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="mt-16 text-center">
-        <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-        <div class="rounded-2xl border border-black/10 bg-white p-6 max-w-3xl mx-auto">
-          <p class="text-base text-black/80">
-            Booking &amp; inquiries:
-            <a href="mailto:booking@yourdomain.com" class="underline underline-offset-4 hover:no-underline">booking@yourdomain.com</a>
-          </p>
-          <div class="mt-4 flex items-center justify-center gap-3">
-            <a href="https://soundcloud.com/maxschlossberg?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"
-               class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 hover:border-black/30 transition">
-              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" aria-hidden="true">
-                <path d="M335.2 184.2c-6.2 0-12.2.7-18 2-12.5-44.7-53.5-77.4-102-77.4-58.5 0-106 47.5-106 106v2.5c-3.9-.9-8-1.4-12.2-1.4C68 216 32 252 32 296s36 80 81 80h222c40.1 0 73-32.9 73-73s-32.9-73-72.8-73h-.1z" fill="currentColor"/>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/max.schlossberg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-               class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 hover:border-black/30 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5" aria-hidden="true">
-                <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12.1 27-27 27h-27c-14.9 0-27-12.1-27-27v-27c0-14.9 12.1-27 27-27h27c14.9 0 27 12.1 27 27v27z"/>
-              </svg>
-            </a>
-          </div>
+      <section class="mt-8 text-center bg-transparent p-6 md:p-10 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extralight uppercase mb-4">Contact</h2>
+        <div class="bg-white p-6 text-center">
+          <p class="text-base text-black/80 font-light">Phone: <a href="tel:+19173559994" class="underline">917 355 9994</a></p>
+          <p class="text-base text-black/80 font-light">Email: <a href="mailto:maxschlossberg1@gmail.com" class="underline">maxschlossberg1@gmail.com</a></p>
         </div>
       </section>
 
-      <!-- Footer -->
-      <footer class="mt-16 text-center text-sm text-black/50">
-        <p>&copy; <span id="year"></span> SCHLOSS. All rights reserved.</p>
+      <footer class="mt-8 text-center text-sm text-black/50">
+        <p>© 2025 SCHLOSS. All rights reserved.</p>
       </footer>
     </div>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+  </body>
 </html>
