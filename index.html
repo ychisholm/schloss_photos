@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SCHLOSS — DJ</title>
   <meta name="description" content="SCHLOSS — NYC-based DJ and founder of Not So Static. Live sets, events, and media." />
-  <!-- Google Font (thin/sleek) -->
+  <!-- Font & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
+    body { font-family: 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
     .hide-scrollbar::-webkit-scrollbar { height: 8px; }
     .hide-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 9999px; }
     .hide-scrollbar { scrollbar-width: thin; }
@@ -23,22 +20,25 @@
   <!-- faint white wash -->
   <div class="fixed inset-0 bg-white/90 pointer-events-none z-0"></div>
 
-  <!-- Border text frame (non-overlapping) -->
-  <div class="fixed top-0 left-8 right-8 md:left-10 md:right-10 h-8 md:h-10 flex items-center justify-center pointer-events-none z-10">
+  <!-- Border text frame -->
+  <!-- Top: visible only at very top -->
+  <div id="topBorder" class="hidden fixed top-0 left-8 right-8 md:left-10 md:right-10 h-8 md:h-10 flex items-center justify-center pointer-events-none z-10">
     <div class="w-full overflow-hidden">
-      <div class="borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30">NOT SO STATIC</div>
+      <div class="borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30"></div>
     </div>
   </div>
-  <div class="fixed bottom-0 left-8 right-8 md:left-10 md:right-10 h-8 md:h-10 flex items-center justify-center pointer-events-none z-10">
+  <!-- Bottom: visible only at very bottom -->
+  <div id="bottomBorder" class="hidden fixed bottom-0 left-8 right-8 md:left-10 md:right-10 h-8 md:h-10 flex items-center justify-center pointer-events-none z-10">
     <div class="w-full overflow-hidden">
-      <div class="borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30">NOT SO STATIC</div>
+      <div class="borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30"></div>
     </div>
   </div>
+  <!-- Left/Right always on (non-overlapping with top/bottom) -->
   <div class="fixed left-0 top-8 bottom-8 md:top-10 md:bottom-10 w-8 md:w-10 flex items-center justify-center pointer-events-none z-10">
-    <div class="-rotate-90 borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30">NOT SO STATIC</div>
+    <div class="-rotate-90 borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30"></div>
   </div>
   <div class="fixed right-0 top-8 bottom-8 md:top-10 md:bottom-10 w-8 md:w-10 flex items-center justify-center pointer-events-none z-10">
-    <div class="rotate-90 borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30">NOT SO STATIC</div>
+    <div class="rotate-90 borderline whitespace-nowrap text-[10px] md:text-xs tracking-[0.35em] uppercase text-black/30"></div>
   </div>
 
   <main class="min-h-screen relative z-20">
@@ -81,10 +81,43 @@
         </div>
       </section>
 
+      <!-- Not So Static Button -->
+      <div class="mt-6 flex justify-center">
+        <a
+          href="https://www.instagram.com/not.so.static.nyc/profilecard/?igsh=MWF0YWRheGpjZmVtbw=="
+          target="_blank" rel="noopener noreferrer" aria-label="Not So Static Instagram"
+          class="group inline-flex items-center justify-center transition"
+        >
+          <span class="h-14 w-14 md:h-16 md:w-16 rounded-full border border-black overflow-hidden">
+            <img
+              src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_notsostatic.jpg"
+              alt="NOT SO STATIC"
+              class="h-full w-full object-cover select-none transition-transform duration-200 group-hover:scale-105"
+              draggable="false"
+            />
+          </span>
+        </a>
+      </div>
+
+      <!-- Media (auto-scrolling, full-bleed) -->
+      <section class="mt-12 p-6 md:p-10 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-extralight uppercase mb-6 text-center">Media</h2>
+        <!-- Full-bleed wrapper -->
+        <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+          <div id="mediaScroller" class="overflow-hidden" aria-label="Auto-scrolling photo gallery">
+            <div id="mediaTrack" class="flex gap-4 py-2">
+              <!-- Fallback (replaced after GitHub API loads) -->
+              <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_1.jpeg" class="h-72 md:h-80 lg:h-96 w-auto object-cover select-none" alt="DJ set photo 1" loading="lazy" decoding="async" draggable="false">
+              <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_2.jpeg" class="h-72 md:h-80 lg:h-96 w-auto object-cover select-none" alt="DJ set photo 2" loading="lazy" decoding="async" draggable="false">
+              <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_3.jpeg" class="h-72 md:h-80 lg:h-96 w-auto object-cover select-none" alt="DJ set photo 3" loading="lazy" decoding="async" draggable="false">
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Live Sets -->
       <section class="mt-12 text-center p-6 md:p-10 max-w-4xl mx-auto">
         <h2 class="text-2xl font-extralight uppercase mb-6">Live Sets</h2>
-
         <article class="p-4 md:p-6 text-center">
           <h3 class="mb-3 text-lg font-light uppercase tracking-tight">Keinda Sounds Like Keine</h3>
           <div class="w-full overflow-hidden h-[300px]">
@@ -95,7 +128,6 @@
             </iframe>
           </div>
         </article>
-
         <article class="p-4 md:p-6 text-center mt-6">
           <h3 class="mb-3 text-lg font-light uppercase tracking-tight">Laissez Faire (Edited)</h3>
           <div class="w-full overflow-hidden h-[300px]">
@@ -145,30 +177,14 @@
         </ul>
       </section>
 
-      <!-- Media (auto-pulls .jpeg files from repo; with fallback) -->
-      <section class="mt-12 p-6 md:p-10 max-w-4xl mx-auto">
-        <h2 class="text-2xl font-extralight uppercase mb-6 text-center">Media</h2>
-        <div id="media-strip" class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory mx-auto hide-scrollbar" aria-label="Photo gallery">
-          <!-- Fallback images (shown until GitHub API loads) -->
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_1.jpeg" alt="DJ set photo 1"
-               class="h-72 md:h-80 w-auto object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_2.jpeg" alt="DJ set photo 2"
-               class="h-72 md:h-80 w-auto object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
-          <img src="https://cdn.jsdelivr.net/gh/ychisholm/schloss_photos@main/schloss_media_3.jpeg" alt="DJ set photo 3"
-               class="h-72 md:h-80 w-auto object-cover snap-start select-none" loading="lazy" decoding="async" draggable="false">
-        </div>
-      </section>
-
       <!-- Contact -->
       <section class="mt-12 text-center p-6 md:p-10 max-w-4xl mx-auto">
         <h2 class="text-2xl font-extralight uppercase mb-4">Contact</h2>
         <p class="text-base text-black/80 font-light">
-          Phone:
-          <a href="tel:+19173559994" class="underline underline-offset-4 hover:no-underline"> 917 355 9994</a>
+          Phone: <a href="tel:+19173559994" class="underline underline-offset-4 hover:no-underline">917 355 9994</a>
         </p>
         <p class="text-base text-black/80 font-light">
-          Email:
-          <a href="mailto:maxschlossberg1@gmail.com" class="underline underline-offset-4 hover:no-underline"> maxschlossberg1@gmail.com</a>
+          Email: <a href="mailto:maxschlossberg1@gmail.com" class="underline underline-offset-4 hover:no-underline">maxschlossberg1@gmail.com</a>
         </p>
         <div class="mt-4 flex items-center justify-center gap-3">
           <a href="https://soundcloud.com/maxschlossberg" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"
@@ -190,7 +206,7 @@
   </main>
 
   <script>
-    // Border text content (repeat to fill strips)
+    // Fill all borderline strips with repeated phrase
     (function() {
       var text = Array(50).fill('NOT SO STATIC').join(' • ');
       document.querySelectorAll('.borderline').forEach(function(el) {
@@ -198,37 +214,86 @@
       });
     })();
 
+    // Toggle top/bottom border visibility based on scroll position
+    (function() {
+      var topEl = document.getElementById('topBorder');
+      var bottomEl = document.getElementById('bottomBorder');
+      function update() {
+        var doc = document.documentElement;
+        var st = doc.scrollTop || document.body.scrollTop;
+        var sh = doc.scrollHeight || document.body.scrollHeight;
+        var ch = doc.clientHeight || window.innerHeight;
+        // Top visible when at top
+        topEl.classList.toggle('hidden', !(st <= 0));
+        // Bottom visible when at (or within 1px of) bottom
+        bottomEl.classList.toggle('hidden', !(st + ch >= sh - 1));
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    // Build media from GitHub (.jpeg) and auto-scroll horizontally in a loop
+    (function() {
+      var user = 'ychisholm';
+      var repo = 'schloss_photos';
+      var branch = 'main';
+      var api = 'https://api.github.com/repos/' + user + '/' + repo + '/git/trees/' + branch + '?recursive=1';
+      var scroller = document.getElementById('mediaScroller');
+      var track = document.getElementById('mediaTrack');
+
+      function setImages(urls) {
+        // Build doubled list for seamless loop
+        var list = urls.concat(urls);
+        track.innerHTML = '';
+        list.forEach(function(src, i) {
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = 'DJ set photo ' + (i + 1);
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          img.draggable = false;
+          img.className = 'h-72 md:h-80 lg:h-96 w-auto object-cover select-none';
+          track.appendChild(img);
+        });
+      }
+
+      function startAutoScroll() {
+        var raf;
+        var speed = 0.3; // pixels per frame (slow & steady)
+        function step() {
+          if (!scroller) return;
+          scroller.scrollLeft += speed;
+          // Wrap at half width (since we doubled the list)
+          var half = track.scrollWidth / 2;
+          if (scroller.scrollLeft >= half) {
+            scroller.scrollLeft -= half;
+          }
+          raf = requestAnimationFrame(step);
+        }
+        raf = requestAnimationFrame(step);
+        // Clean-up if needed (not strictly necessary for a static page)
+        window.addEventListener('beforeunload', function() {
+          if (raf) cancelAnimationFrame(raf);
+        });
+      }
+
+      // Try to fetch .jpeg files from repo; fallback to existing DOM images if it fails
+      fetch(api)
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(data){
+          if (!data || !data.tree) { startAutoScroll(); return; }
+          var files = data.tree
+            .filter(function(n){ return n.type === 'blob' && /\.jpeg$/i.test(n.path); })
+            .map(function(n){ return 'https://cdn.jsdelivr.net/gh/' + user + '/' + repo + '@' + branch + '/' + n.path; });
+          if (files.length) setImages(files);
+          startAutoScroll();
+        })
+        .catch(function(){ startAutoScroll(); });
+    })();
+
     // Year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Dynamic media: auto-pull .jpeg images from ychisholm/schloss_photos (main)
-    (function() {
-      const user = 'ychisholm';
-      const repo = 'schloss_photos';
-      const branch = 'main';
-      const api = `https://api.github.com/repos/${user}/${repo}/git/trees/${branch}?recursive=1`;
-      fetch(api)
-        .then(r => r.json())
-        .then(data => {
-          if (!data || !data.tree) return;
-          const files = data.tree
-            .filter(n => n.type === 'blob' && /\.jpeg$/i.test(n.path))
-            .map(n => `https://cdn.jsdelivr.net/gh/${user}/${repo}@${branch}/${n.path}`);
-          if (!files.length) return;
-          const strip = document.getElementById('media-strip');
-          strip.innerHTML = '';
-          files.forEach((src, i) => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = `DJ set photo ${i+1}`;
-            img.loading = 'lazy';
-            img.draggable = false;
-            img.className = 'h-72 md:h-80 w-auto object-cover snap-start select-none';
-            strip.appendChild(img);
-          });
-        })
-        .catch(() => { /* keep fallback images */ });
-    })();
   </script>
 </body>
 </html>
